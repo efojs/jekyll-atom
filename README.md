@@ -37,7 +37,7 @@ atom:
   defaultPostDir: _drafts
 
 frontMatter:
-  - 'layout:'      # "post"
+  - 'layout:'      # auto: _newsletters -> newsletter
   - 'title:'       # given
   - 'date:'        # current
   - 'key: value'
@@ -62,6 +62,7 @@ The default directory to be selected on the new post modal. Defaults to `_posts`
 ### frontMatter
 
 - By default it adds layout, title and date
+- Layout name will be converted from postDir name by trimming leading and trailing characters: underscore "_" and plural suffix "s"
 
 
 # Usage

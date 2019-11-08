@@ -59,16 +59,16 @@ module.exports =
             atom.notifications.addError("File names must not end with a '/' character.")
             @destroy()
           else
-            fs.writeFileSync(pathToCreate, @fileContents(title, Utils.generateDateString(new Date(), true)))
+            fs.writeFileSync(pathToCreate, @fileContents(title, Utils.generateDateString(new Date(), true), postDir))
             atom.workspace.open(pathToCreate)
             @destroy()
       catch error
         atom.notifications.addError("#{error.message}.")
 
-    fileContents: (title, dateString) ->
+    fileContents: (title, dateString, postDir) ->
       [
         '---'
-        'layout: post'
+        "layout: \"#{postDir.slice(1,-1)}\""
         "title: \"#{title}\""
         "date: \"#{dateString}\""
       ].concat process.jekyllAtom.config.frontMatter
