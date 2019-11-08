@@ -35,6 +35,8 @@ atom:
   postDirs:
     - _newsletters
   defaultPostDir: _drafts
+
+postFileType: ".markdown"
 ```
 
 ### buildCommand
@@ -52,6 +54,10 @@ The directories that appear on the new post modal. `_posts` and `_drafts` are ad
 ### defaultPostDir
 
 The default directory to be selected on the new post modal. Defaults to `_posts`.
+
+### postFileType
+
+By default newly created post file will have .markdown extension, but you may set yours (e.g. ".md")
 
 # Usage
 
