@@ -35,6 +35,12 @@ atom:
   postDirs:
     - _newsletters
   defaultPostDir: _drafts
+
+frontMatter:
+  - 'layout:'      # "post"
+  - 'title:'       # given
+  - 'date:'        # current
+  - 'key: value'
 ```
 
 ### buildCommand
@@ -52,6 +58,11 @@ The directories that appear on the new post modal. `_posts` and `_drafts` are ad
 ### defaultPostDir
 
 The default directory to be selected on the new post modal. Defaults to `_posts`.
+
+### frontMatter
+
+- By default it adds layout, title and date
+
 
 # Usage
 
@@ -86,6 +97,10 @@ When triggered this function opens up the include for the current tag. For examp
 ### Create a new Post
 
 When triggered this function brings up a popup at the top of the screen for you to type in the title of your new post e.g. `Something Really Cool!` (on the date 2/4/2014). When you submit the form a new file of `POSTSDIR/2014-04-02-something-really-cool.POST_FORMAT` will be created with a very basic front matter and opened on the screen.
+
+You may tune this function in project's `_config.yml`:
+- Set `postDirs`
+- Set custom default fields for front matter
 
 ### Open Config
 

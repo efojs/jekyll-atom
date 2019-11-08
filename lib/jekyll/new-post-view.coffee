@@ -71,5 +71,6 @@ module.exports =
         'layout: post'
         "title: \"#{title}\""
         "date: \"#{dateString}\""
-        '---'
-      ].join(os.EOL)
+      ].concat process.jekyllAtom.config.frontMatter
+        .concat '---'
+        .join(os.EOL)

@@ -43,7 +43,9 @@ module.exports =
       process.jekyllAtom.config.atom.postDirs.unshift '_drafts'
       process.jekyllAtom.config.atom.postDirs.unshift '_posts'
 
-
+      # Read custom default front matter
+      unless process.jekyllAtom.config.frontMatter
+        process.jekyllAtom.config.frontMatter = []
 
 
       @Main.Emitter.emit 'config-loaded', process.jekyllAtom.config
